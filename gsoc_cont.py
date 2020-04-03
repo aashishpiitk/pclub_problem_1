@@ -7,7 +7,7 @@ import pandas as pd
 f=open('students.json','r')
 file=f.read()
 jso=json.loads(file)
-print(len(jso))
+#print(len(jso))
 
 #loading csv data
 df=pd.read_csv('project_data.csv')
