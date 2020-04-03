@@ -8,7 +8,7 @@ def striphtml(data):
     return p.sub('', data)
 d=[]
 for k in range(1,13): 
-    print(k,"iteration")
+    print(k,"page")
     url="https://summerofcode.withgoogle.com/archive/2019/projects/?page="+str(k)
     page=requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -34,3 +34,5 @@ for k in range(1,13):
 with open('project_data.csv','w',newline='') as fp:
     a=csv.writer(fp,delimiter=',')
     a.writerows(d)
+    
+print("data_successfully_scraped\nnow run the next script")
