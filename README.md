@@ -1,4 +1,11 @@
-# pclub_problem_1
+## pclub_problem_1
+
+#libraries necessary:- 
+1.re
+1.pandas
+
+
+
 Step 1:copy both python scripts and students.json to a directory 
 
 Step 2:run gsoc.py ,it will create a file named project_data.csv in the same directory in which the program is run
