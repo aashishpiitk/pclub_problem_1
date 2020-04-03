@@ -22,38 +22,42 @@ def single(name):
     else:
         return False
 def special(name):
-    regex=re.compile('[@_!#$%^&*()<>?/\|}{~:0-9A-Z]')
+    regex=re.compile('[@_!#$%^&*()<>?/\|}{~:0-9]')
     if(regex.search(name)==None):
         return True
     else:
         return False
 
-
-
+def isOfficial(name):
+    if(special(name) and single(name) and not(name.islower())):
+        return True
+    else:
+        return False
 #creating a list to store official names
 names_json=[]
-
 #function to extract proper names
 def official_name():
 #print(jso.get('n'))
     for i in range(len(jso)):
         name=jso[i]['n']
-        if(special(name) and single(name)):
-            print(name)
+        if(isOfficial(name)):
+           names_json.append(name)
         else:
-            names_json.append(name)
+            print(name)
+            
 
 
 #calling the function to official names
 official_name()
 
-#print(n_csv)
+#print(len(jso))
 #print("Lavanya Singh" in n_csv)
 
 
 for i,nm_csv in enumerate(names_csv):
     for j in range(len(jso)):
-        if(jso[j]["n"]==nm_csv):
+        if(jso[j]["n"]==nm_csv and isOfficial(nm_csv)):
             print("Name:",nm_csv," Roll No:",jso[j]["i"]," Branch:",jso[j]["d"]," ",df.iloc[i,2]," Project:",df.iloc[i,1])
         #print()
         #print(name)
+#print(len(names_json))
