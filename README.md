@@ -1,8 +1,6 @@
 ## pclub_problem_1
 
-*libraries necessary*:- 
-1.re
-1.pandas
+**libraries necessary**:- pip3 install re,pandas,json,csv,bs4,requests
 
 
 
